@@ -6,7 +6,7 @@
 /*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:50:27 by dabalm            #+#    #+#             */
-/*   Updated: 2023/12/07 21:26:30 by dabalm           ###   ########.fr       */
+/*   Updated: 2023/12/09 18:11:57 by dabalm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ t_map	*setup_map(char *file)
 	t_map	*map;
 
 	map = create_map(file);
-	check_paths(map);
+	if (map)
+		check_paths(map);
 	return (map);
 }
 
@@ -98,6 +99,7 @@ t_game	*setup(int argc, char *argv[])
 	setup_img(game);
 	setup_player(game);
 	setup_collectibles(game);
+	setup_exit(game);
 	setup_frame(game);
 	game->mlx_win = mlx_new_window(game->mlx, game->size * VIEW_WIDTH,
 			game->size * VIEW_HEIGHT, "this is not a playgound");

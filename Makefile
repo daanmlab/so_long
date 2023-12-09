@@ -6,7 +6,7 @@
 #    By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/15 13:23:07 by dabalm            #+#    #+#              #
-#    Updated: 2023/12/08 14:24:39 by dabalm           ###   ########.fr        #
+#    Updated: 2023/12/09 18:12:26 by dabalm           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,10 +17,12 @@ SRCS = 	map/map.c \
 		setup/setup.c \
 		setup/img.c \
 		setup/collectibles.c \
+		setup/exit.c \
 		render/render.c \
 		render/put_img.c \
 		render/walls.c \
 		render/collectibles.c \
+		render/exit.c \
 		player/hitbox.c \
 		player/move.c \
 		player/kill_coll.c \

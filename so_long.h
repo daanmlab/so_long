@@ -6,7 +6,7 @@
 /*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 19:24:07 by dabalm            #+#    #+#             */
-/*   Updated: 2023/12/08 14:39:45 by dabalm           ###   ########.fr       */
+/*   Updated: 2023/12/09 18:30:16 by dabalm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ typedef struct s_collectible
 {
 	t_position		position;
 	int				frame;
-	int				dying;
+	int				dead;
 	t_hitbox		hitbox;
 }					t_collectible;
 
@@ -83,12 +83,13 @@ typedef struct s_game
 	int				size;
 	t_player		*player;
 	t_collectible	**collectibles;
+	t_collectible		*exit;
 	t_img			***player_imgs;
+	t_img			**collectible_imgs;
 	t_img			*floor_img;
 	t_img			**wall_imgs;
 	t_img			*item_img;
-	t_img			**collectible_imgs;
-	t_img			*exit_img;
+	t_img			**exit_imgs;
 	t_img			*frame;
 	float			move_distance;
 }					t_game;
@@ -103,10 +104,13 @@ int can_move_down(t_game *game);
 int can_move_left(t_game *game);
 int can_move_right(t_game *game);
 void kill_coll(t_game *game, t_position *pos1, t_position *pos2);
+void use_exit(t_game *game);
+
 
 // setup
 void				setup_img(t_game *game);
 void				setup_collectibles(t_game *game);
+void setup_exit(t_game *game);
 t_game				*setup(int argc, char *argv[]);
 
 // map
@@ -122,4 +126,5 @@ void				add_wall_beneath(t_game *game);
 void				add_wall_left(t_game *game);
 void				add_wall_right(t_game *game);
 void	add_collectibles(t_game *game);
+void	add_exit(t_game *game);
 void				get_hitbox(t_game *game);

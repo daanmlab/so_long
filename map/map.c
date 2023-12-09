@@ -6,7 +6,7 @@
 /*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 17:15:17 by dabalm            #+#    #+#             */
-/*   Updated: 2023/11/25 19:22:40 by dabalm           ###   ########.fr       */
+/*   Updated: 2023/12/09 17:10:37 by dabalm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,27 @@
 static int	is_valid_line(char *line)
 {
 	int	i;
+	static int has_player = 0;
+	static int has_exit = 0;
 
 	i = 0;
 	while (line[i] && line[i] != '\n')
 	{
 		if (!ft_strchr("01CEP", line[i]))
 			return (0);
+		if (line[i] == 'P' && has_player)
+			return (0);
+		if (line[i] == 'P')
+			has_player = 1;
+		if (line[i] == 'E' && has_exit)
+			return (0);
+		if (line[i] == 'E')
+			has_exit = 1;
 		i++;
 	}
 	return (1);
 }
+
 
 /**
 

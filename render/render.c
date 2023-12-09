@@ -6,7 +6,7 @@
 /*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 18:44:40 by dabalm            #+#    #+#             */
-/*   Updated: 2023/12/08 14:23:44 by dabalm           ###   ########.fr       */
+/*   Updated: 2023/12/09 18:13:33 by dabalm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,7 @@ int	render(t_game *game)
 	add_wall_right(game);
 	add_wall_beneath(game);
 	add_collectibles(game);
+	add_exit(game);
 	add_player(game);
 	// add_test(game);
 	add_wall_above(game);

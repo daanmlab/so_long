@@ -6,7 +6,7 @@
 /*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 15:15:54 by dabalm            #+#    #+#             */
-/*   Updated: 2023/12/07 16:01:38 by dabalm           ###   ########.fr       */
+/*   Updated: 2023/12/09 18:18:38 by dabalm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,14 +63,29 @@ void	setup_img_player(t_game *game)
 
 void setup_img_collectibles(t_game *game)
 {
-	game->collectible_imgs = ft_calloc(2, sizeof(t_img *));
+	game->collectible_imgs = ft_calloc(5, sizeof(t_img *));
 	game->collectible_imgs[0] = create_img(game, "collectible_alive_1");   
-	game->collectible_imgs[1] = create_img(game, "collectible_dead_1");
+	game->collectible_imgs[1] = create_img(game, "collectible_2");   
+	game->collectible_imgs[2] = create_img(game, "collectible_3");   
+	game->collectible_imgs[3] = create_img(game, "collectible_4");   
+	game->collectible_imgs[4] = create_img(game, "collectible_dead_1");
+}
+
+void setup_img_exit(t_game *game)
+{
+	game->exit_imgs = ft_calloc(6, sizeof(t_img *));
+	game->exit_imgs[0] = create_img(game, "exit_1");   
+	game->exit_imgs[1] = create_img(game, "exit_2");   
+	game->exit_imgs[2] = create_img(game, "exit_3");   
+	game->exit_imgs[3] = create_img(game, "exit_4");   
+	game->exit_imgs[4] = create_img(game, "exit_5");
+	game->exit_imgs[5] = create_img(game, "exit_6");
 }
 
 void	setup_img(t_game *game)
 {
 	setup_img_collectibles(game);
+	setup_img_exit(game);
 	setup_img_player(game);
 	game->wall_imgs = ft_calloc(12, sizeof(t_img *));
 	game->wall_imgs[0] = create_img(game, "wall_top");

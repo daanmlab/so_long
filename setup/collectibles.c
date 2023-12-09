@@ -6,7 +6,7 @@
 /*   By: dabalm <dabalm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 16:46:52 by dabalm            #+#    #+#             */
-/*   Updated: 2023/12/08 12:16:36 by dabalm           ###   ########.fr       */
+/*   Updated: 2023/12/09 17:14:53 by dabalm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ t_collectible *create_collectible(t_game *game, int y, int x)
         return NULL;
     coll->position.y = y;
     coll->position.x = x;
-    coll->dying = 0;
+    coll->dead = 0;
     coll->frame = 0;
     return coll;
 }
@@ -101,12 +101,12 @@ void setup_collectibles(t_game *game)
         if (game->map->matrix[game->collectibles[i]->position.y + 1][game->collectibles[i]->position.x] == '1')
             temp = (game->size / 4);
         else
-            temp = (rand() % game->size) - (game->size / 4);
+            temp = (rand() % (game->size - (game->size / 4))) ;
         game->collectibles[i]->position.x *= game->size;
         game->collectibles[i]->position.y *= game->size;
-        game->collectibles[i]->position.x += (rand() % game->size) - (game->size / 4);
+        game->collectibles[i]->position.x += (rand() % (2 * (game->size / 3))) + (game->size / 6);
         game->collectibles[i]->position.y += temp;
-        ft_printf("i: %d; x: %d; y: %d;\n", i, game->collectibles[i]->position.x, game->collectibles[i]->position.y);
+        // ft_printf("i: %d; x: %d; y: %d;\n", i, game->collectibles[i]->position.x, game->collectibles[i]->position.y);
         i--;
     }
 }
