@@ -4,6 +4,8 @@
 ## 🚀 About This Project
 `so_long` is an exciting and engaging project designed to test your skills in 2D game development. Dive into this amazing world of creativity and challenge!
 
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/-qORQ_vFXmU/0.jpg)](https://www.youtube.com/watch?v=-qORQ_vFXmU)
+
 ## 📋 How to Play
 - **Getting Started**: Clone the repo and navigate to the main directory.
 - **Running the Game**: Use the make command to compile, then run the game with `./so_long [map_file]`.
